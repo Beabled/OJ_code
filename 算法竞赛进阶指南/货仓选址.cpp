@@ -1,0 +1,24 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+typedef long long ll;
+const int N = 1e5 + 7;
+
+int a[N], n;
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin >> n;
+    for (int i = 0; i < n; i++) cin >> a[i];
+    sort(a, a + n);
+    
+    ll res = 0;
+    for (int i = 0; i < n; i++) res += abs(a[i] - a[n / 2]);
+
+    cout << res << endl;
+    
+    return 0;
+}
